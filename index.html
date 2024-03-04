@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+
+<html>
+
+<!-- creating headers --> 
+<head> 
+
+<title> Home </title>
+
+
+</head>
+
+<!--creating the body of the webpage here -->
+<body> 
+
+
+<h1> Home </h1>
+
+<div class="topnav">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+
+
+<!-- input header of paragraph 1 -->
+<h2> Why did I make this website? </h2>
+
+<!-- text for the first paragraph here -->
+<p> This website is a milestone project for my 
+Intro to Web Development class to introduce the use of HTML and CSS hands on. </p>
+
+
+<img src="./img/gatlinburg pic.JPG" alt="Thumbs up pic" width="275" height="345">
+
+<!-- insert break -->
+</br>
+
+<!-- another header for paragraph 2 -->
+<h3> Who am I ?? </h3>
+
+<-- main body paragraph -->
+
+<p> Hi! My name is Jose, and I'm a 22 year old junior here at KSU, and Im currently studying IT.
+My hobbies include: working on cars, playing video games, playing basketball, working out, and rock climbing. </p>
+
+</br>
+
+
+<!-- creating clock -->
+
+<body>
+    <div id="clockContainer">
+        <div id="hour"></div>
+        <div id="minute"></div>
+        <div id="second"></div>
+    </div>
+</body>
+
+</html>
+
+
+<!-- using css to adjust the style of the page -->
+<style>
+
+	h1 {
+	text-align: center;
+	}
+
+    #clockContainer {
+    position: relative;
+    margin: auto;
+    height: 30vw;
+    /*to make the height and width responsive*/
+    width: 30vw;
+    background: url(https://media.geeksforgeeks.org/wp-content/uploads/20210302161254/imgonlinecomuaCompressToSizeOmNATjUMFKw-300x300.jpg) no-repeat;
+    /*setting our background image*/
+    background-size: 100%;
+    }
+    
+    #hour,
+    #minute,
+    #second {
+    position: absolute;
+    background: black;
+    border-radius: 10px;
+    transform-origin: bottom;
+    }
+    
+    #hour {
+    width: 1.8%;
+    height: 25%;
+    top: 25%;
+    left: 48.85%;
+    opacity: 0.8;
+    }
+    
+    #minute {
+    width: 1.6%;
+    height: 30%;
+    top: 19%;
+    left: 48.9%;
+    opacity: 0.8;
+    }
+    
+    #second {
+    width: 1%;
+    height: 40%;
+    top: 9%;
+    left: 49.25%;
+    opacity: 0.8;
+    }
+</style>
+<script>
+    setInterval(() => {
+    d = new Date(); //object of date()
+    hr = d.getHours();
+    min = d.getMinutes();
+    sec = d.getSeconds();
+    hr_rotation = 30 * hr + min / 2; //converting current time
+    min_rotation = 6 * min;
+    sec_rotation = 6 * sec;
+    
+    hour.style.transform = `rotate(${hr_rotation}deg)`;
+    minute.style.transform = `rotate(${min_rotation}deg)`;
+    second.style.transform = `rotate(${sec_rotation}deg)`;
+    }, 1000);
+</script>
+
+<!-- end body of webpage here -->
+</body>
+
+
+<!-- adjusting font, color, and position -->
+
+
+<style>
+
+.topnav {
+  background-color: LightGreen;
+  overflow: hidden;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  font-family: Serif;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+p{
+ text-align: center;
+ font-family: verdana;
+
+ }
+
+h2{
+ text-align: center;
+ font-family: verdana;
+
+ }
+
+h3{
+ text-align: center;
+ font-family: verdana;
+
+ }
+
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+
+<!-- close html here -->
+</html> 
