@@ -1,118 +1,64 @@
 <!DOCTYPE html>
-
-
 <html>
-
 <head> 
-
-<title> Contact </title>
-
+    <title>Contact</title>
 </head>
-
 <body> 
 
 <!-- creating headers for contact info -->
-<h1> Contact </h1>
-
+<h1>Contact</h1>
 
 <div class="topnav">
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
 </div>
 
+<h2>How to reach out to me!</h2>
 
-<h2> How to reach out to me !</h2>
+<!-- Form for submitting email -->
+<form id="emailForm">
+    <label for="email">Your Email:</label>
+    <input type="text" id="email" name="email" required>
+    <button type="submit">Submit</button>
+</form>
 
-<body>
-  <form action="/submit-form" method="post">
-      <label for="email">Your Email:</label>
-      <input type="text" id="email" name="email" required>
-      <button type="submit">Submit</button>
-  </form>
-</body>
+<p>jlaso@students.kennesaw.edu</p>
+<p>678-849-8801</p>
 
-<p> jlaso@students.kennesaw.edu </p>
-
-<p> 678-849-8801 </p>
-
-<!-- creating button and input for button -->
-
- <script>
-    function myFunction() {
-      document.getElementById("demo").innerHTML = "https://www.linkedin.com/in/jos%C3%A9-laso-0a02b62b7/";
-    }
-  </script>
-
-  <p id="demo">Click the button below !!</p>
-  <p>
-  <button type="button" onclick="myFunction()">CLICK ME</button>
-  </p>
-  </br>
+<!-- LinkedIn button -->
+<p id="linkedinLink">Click the button below!!</p>
+<p><button type="button" onclick="myFunction()">CLICK ME</button></p>
+</br>
   
 <img src="./img/foggy mountain pic.JPG" alt="Foggy Mountain Pic" width="275" height="400">
-
   
-</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $('#emailForm').submit(function(event){
+        event.preventDefault(); // Prevent default form submission
+        
+        // Get form data
+        var formData = $(this).serialize();
+        
+        // AJAX post request
+        $.post('/submit-form', formData, function(response){
+            // Handle response if needed
+            console.log(response);
+        });
+    });
+    
+    // LinkedIn button function
+    function myFunction() {
+        $('#linkedinLink').html('<a href="https://www.linkedin.com/in/jos%C3%A9-laso-0a02b62b7/">https://www.linkedin.com/in/jos%C3%A9-laso-0a02b62b7/</a>');
+    }
+});
+</script>
 
 <style>
-
-h1 {
-text-align: center;
-font-family: verdana;
-}
-
-.topnav {
-  background-color: rgba(255, 99, 71, 0.5);
-  overflow: hidden;
-}
-
-.topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-  font-family:verdana;
-
-}
-
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-.topnav a.active {
-  background-color: #04AA6D;
-  color: white;
- }
- 
- p{
- text-align: center;
- font-family: verdana;
-
- }
- 
- h2 {
- text-align: center;
-font-family: verdana;
-}
-
-id {
-
-
-text-align: center;
-font-family: verdana;
-}
-
-img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
+/* Your CSS styles */
 </style>
 
-<!-- close html here -->
-</html> 
+</body>
+</html>
